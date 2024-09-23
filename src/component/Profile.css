@@ -1,0 +1,13 @@
+.profile-info {
+    transition: .3s;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info:hover {
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-item {
+    width: 168px;
+}

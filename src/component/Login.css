@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 370px;
+  padding: 1rem;
+  text-align: center;
+
+  transition: .3s;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-signin:hover {
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.link {
+  font-size: 14px;
+}
