@@ -12,11 +12,7 @@ function ModalPut(props) {
         phoneNumber: '',
         dateOfBirth: '',
         gender: '',
-        address: '',
-        city: '',
-        stateProvince: '',
-        country: '',
-        postalCode: ''
+        address: ''
     });
 
     useEffect(() => {
@@ -27,11 +23,7 @@ function ModalPut(props) {
                 phoneNumber: datas.phoneNumber || '',
                 dateOfBirth: datas.dateOfBirth || '',
                 gender: datas.gender || '',
-                address: datas.address?.address || '',
-                city: datas.address?.city || '',
-                stateProvince: datas.address?.stateProvince || '',
-                country: datas.address?.country || '',
-                postalCode: datas.address?.postalCode || ''
+                address: datas.address || ''
             });
         }
     }, [datas]);
@@ -156,10 +148,9 @@ function ModalPut(props) {
                                         />
                                     </div>
 
-                                    <div className="col-md-4">
+                                    <div className="col-md-12">
                                         <label htmlFor="validationCustom03" className="form-label">Address</label>
-                                        <input
-                                            type="text"
+                                        <textarea
                                             className="form-control"
                                             id="validationCustom03"
                                             name="address"
@@ -167,55 +158,11 @@ function ModalPut(props) {
                                             onChange={handleInputChange}
                                         />
                                     </div>
-                                    <div className="col-md-4">
-                                        <label htmlFor="validationCustom05" className="form-label">City</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="validationCustom05"
-                                            name="city"
-                                            value={formData.city}
-                                            onChange={handleInputChange}
-                                        />
-                                    </div>
-                                    <div className="col-md-4">
-                                        <label htmlFor="validationCustom06" className="form-label">State province</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="validationCustom06"
-                                            name="stateProvince"
-                                            value={formData.stateProvince}
-                                            onChange={handleInputChange}
-                                        />
-                                    </div>
-                                    <div className="col-md-4">
-                                        <label htmlFor="validationCustom07" className="form-label">Country</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="validationCustom07"
-                                            name="country"
-                                            value={formData.country}
-                                            onChange={handleInputChange}
-                                        />
-                                    </div>
-                                    <div className="col-md-4">
-                                        <label htmlFor="validationCustom08" className="form-label">Zip</label>
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            id="validationCustom08"
-                                            name="postalCode"
-                                            value={formData.postalCode}
-                                            onChange={handleInputChange}
-                                        />
-                                    </div>
                                 </div>
                             </div>
 
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="reset" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" className="btn btn-primary" data-bs-dismiss="modal" disabled={!isFirstName}>Save changes</button>
                             </div>
                         </form>

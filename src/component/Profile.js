@@ -23,15 +23,18 @@ function Profile() {
             setDatas(response.data.data)
             console.log(response.data);
 
-            const imageResponse = await axios.get(`http://localhost:1150/api/v1/auth/images/${response.data.data.fileName}`, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                },
-                responseType: 'blob'
-            });
+            if (response.data.data.fileName != null) {
+                const imageResponse = await axios.get(`http://localhost:1150/api/v1/auth/images/${response.data.data.fileName}`, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    responseType: 'blob'
+                });
 
-            const imgUrl = URL.createObjectURL(imageResponse.data);
-            setImageUrl(imgUrl);
+                const imgUrl = URL.createObjectURL(imageResponse.data);
+                setImageUrl(imgUrl);
+            }
+
 
         } catch (error) {
             console.error('Error: ', error.response?.status, error.response?.data);
@@ -67,10 +70,6 @@ function Profile() {
             console.error('Error: ', error.response?.status, error.response?.data);
         }
     };
-
-    var address = [datas.address?.address, datas.address?.city, datas.address?.stateProvince, datas.address?.country, datas.address?.postalCode]
-        .filter(Boolean)
-        .join(' ');
 
     return (
         <div>
@@ -108,12 +107,8 @@ function Profile() {
                                             </tr>
                                             <tr>
                                                 <td className="col-md-3">ที่อยู่</td>
-                                                <td className="col-md-6">{address || '-'}</td>
+                                                <td className="col-md-6">{datas.address || '-'}</td>
                                             </tr>
-                                            {/* <tr>
-                                                <td className="col-md-3">บทบาท/ตำแหน่ง</td>
-                                                <td className="col-md-6">{datas.roles}</td>
-                                            </tr> */}
                                         </tbody>
                                     </table>
 

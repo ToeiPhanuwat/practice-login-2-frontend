@@ -25,9 +25,8 @@ function SignUp() {
 
         try {
             const response = await axios.post('http://localhost:1150/api/v1/auth/registers', request);
-
-            if (response.status === 201) {
-                navigate('/login');
+            if (response.status === 201 || response.status === 200) {
+                navigate('/sign-up-completed');
             }
 
         } catch (error) {

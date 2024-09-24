@@ -10,6 +10,7 @@ import ResetPassword from './component/ResetPassword';
 import About from './component/About';
 import Features from './component/Features';
 import Home from './component/Home';
+import SignUpCompleted from './component/SignUpCompleted';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path='/profile' element={<Profile />} />
         <Route path='/about' element={<About />} />
         <Route path='/features' element={<Features />} />
+        <Route path='/sign-up-completed' element={<SignUpCompleted />} />
       </Routes>
       
     </div>
